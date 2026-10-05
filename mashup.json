@@ -3,6 +3,13 @@
   "version": "0.1.0",
   "name": "Garry's Redemption",
   "tagline": "Play Red Dead Redemption 2 as a Garry's Mod player: physgun, toolgun, Q menu and GMod's guns on RDR2's people, horses and wagons, in story mode.",
+  "how_to_play": [
+    "Play Red Dead Redemption 2's story mode as a Garry's Mod player, with the physgun, toolgun, Q menu and GMod's guns.",
+    "Press Play and load story mode; Garry's Mod starts by itself, and \"connected to GMod, which has the player\" means it works.",
+    "Use your own GMod binds to move, noclip, open the Q and C menus, switch weapons and use the toolgun.",
+    "The Q menu's Red Dead tab spawns RDR2's people, animals and vehicles.",
+    "Press F9 to hand the player to RDR2 to ride, shop or do a mission, and again to come back; Esc/P pause, M map."
+  ],
   "kind": "passthrough",
   "games": [
     {
