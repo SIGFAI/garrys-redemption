@@ -1,0 +1,433 @@
+{
+  "id": "sigf/garrys-redemption",
+  "version": "0.1.0",
+  "name": "Garry's Redemption",
+  "tagline": "Play Red Dead Redemption 2 as a Garry's Mod player: physgun, toolgun, Q menu and GMod's guns on RDR2's people, horses and wagons, in story mode.",
+  "kind": "passthrough",
+  "games": [
+    {
+      "game": "rdr2",
+      "role": "host",
+      "label": "Red Dead Redemption 2",
+      "engine": "RDR2 (RAGE) + Script Hook RDR2 ASI plugin (C++)",
+      "apps": {
+        "steam": "1174180"
+      },
+      "runtime": "story mode; tested on 1.0.1491.50 (Rockstar launcher, Vulkan); Steam, Rockstar or Epic",
+      "mode": "story mode only"
+    },
+    {
+      "game": "gmod",
+      "role": "guest",
+      "label": "Garry's Mod",
+      "engine": "Garry's Mod x86-64 branch (gmod_win64.exe) + binary module and Lua addon",
+      "apps": {
+        "steam": "4000"
+      },
+      "runtime": "x86-64 beta branch, tested on 2026.09.17"
+    }
+  ],
+  "requires": [
+    {
+      "id": "scripthookrdr2",
+      "version": "1.0.1491.17",
+      "page": "http://www.dev-c.com/rdr2/scripthookrdr2/",
+      "license": "Alexander Blade: no redistribution",
+      "note": "copy ScriptHookRDR2.dll and dinput8.dll (the ASI loader) from its zip next to RDR2.exe"
+    },
+    {
+      "id": "gmod-x86-64",
+      "note": "Steam > Garry's Mod > Properties > Betas: pick x86-64 (the 64-bit gmod_win64.exe)"
+    }
+  ],
+  "install": [
+    {
+      "game": "rdr2",
+      "strategy": "game-dir-snapshot",
+      "loader": "scripthookrdr2",
+      "files": [
+        {
+          "src": "GarrysRedemption-v0.1.0-beta.zip",
+          "dst": "{game}",
+          "root": "RDR2",
+          "unpack": true,
+          "contents": [
+            {
+              "path": "GarrysMod/play_gmod.bat",
+              "sha256": "9fca67bcce82ec6c6761888e8865887f4add628ff84a1b866af7b3c77ce3b246"
+            },
+            {
+              "path": "GarrysMod/garrysmod/addons/garrys_redemption/lua/autorun/gr_init.lua",
+              "sha256": "118def7fbdf7a5b11709046c239cc05d58f2bf1cc980224e0f21650a82dc67f9"
+            },
+            {
+              "path": "GarrysMod/garrysmod/addons/garrys_redemption/lua/entities/gr_blocker.lua",
+              "sha256": "a713bc5313ee51d58d9531b60d597608d2d5a4ff96960ea64f40e174c01f41cd"
+            },
+            {
+              "path": "GarrysMod/garrysmod/addons/garrys_redemption/lua/entities/gr_chunk.lua",
+              "sha256": "7963a0648b266e64dcec77fd71d9abf158419a4716389c41015534516c0caf40"
+            },
+            {
+              "path": "GarrysMod/garrysmod/addons/garrys_redemption/lua/entities/gr_proxy.lua",
+              "sha256": "41ac9c9c4b6c275a37c58cbf7b2dd708f6bbeaec6d4cb5f857176635b96d73d9"
+            },
+            {
+              "path": "GarrysMod/garrysmod/addons/garrys_redemption/lua/entities/gr_surface.lua",
+              "sha256": "c8324b0dbded50b0a0092a3f5604f9cbfe4f8965bba9e63d9d1b3514dcc0cb77"
+            },
+            {
+              "path": "GarrysMod/garrysmod/addons/garrys_redemption/lua/gr/body.lua",
+              "sha256": "1c9f375ba0ac8659e3910b8b1c4ccc771f739c1419ef98e16ef80a8254dc24f5"
+            },
+            {
+              "path": "GarrysMod/garrysmod/addons/garrys_redemption/lua/gr/bridge.lua",
+              "sha256": "12230b8e62f544d4dd124b0e7ffbf78fd4ee4d6957d5292bb14c447978d3d5bd"
+            },
+            {
+              "path": "GarrysMod/garrysmod/addons/garrys_redemption/lua/gr/collide.lua",
+              "sha256": "fd5cf12d79c3f79a2b4a9eb969ac0dfea5fdbaa3d94814c2effa98f9ed6c4384"
+            },
+            {
+              "path": "GarrysMod/garrysmod/addons/garrys_redemption/lua/gr/commands.lua",
+              "sha256": "87b62abe6aa609793ed7c06b253e5ff84d5b04fc34906a5ba30990cfe8fbdb5c"
+            },
+            {
+              "path": "GarrysMod/garrysmod/addons/garrys_redemption/lua/gr/fly.lua",
+              "sha256": "b01dea768523177946545077333b1f98113eff5a2dc9a7d9a7f8208a88526222"
+            },
+            {
+              "path": "GarrysMod/garrysmod/addons/garrys_redemption/lua/gr/health.lua",
+              "sha256": "63e13f6404f2af2e32a4caff6c01d3b01fa4517a7b865fd64a6ec5b32ea218c5"
+            },
+            {
+              "path": "GarrysMod/garrysmod/addons/garrys_redemption/lua/gr/input.lua",
+              "sha256": "37424412852aa889a9457021e15ef7adc619825172dd266f13b4e55db8636ef2"
+            },
+            {
+              "path": "GarrysMod/garrysmod/addons/garrys_redemption/lua/gr/models_data.lua",
+              "sha256": "faa28009995b6a8d059df8b25f7759957dc3e58e9c69822150777af9e7878f29"
+            },
+            {
+              "path": "GarrysMod/garrysmod/addons/garrys_redemption/lua/gr/near.lua",
+              "sha256": "9d08c990835da7d0eb4a5f6f167e2b34b020cd8bb3210c711b44558c2cbb19b1"
+            },
+            {
+              "path": "GarrysMod/garrysmod/addons/garrys_redemption/lua/gr/overlay.lua",
+              "sha256": "2d025277f1bee23a6a3b4068969fdbdb3beac2e11f7fcd461086cc2d4c6c528b"
+            },
+            {
+              "path": "GarrysMod/garrysmod/addons/garrys_redemption/lua/gr/player.lua",
+              "sha256": "cd89e490d1754d275e95bef84fc324b69a6fe49fd14f47cec51a1a3bdd4c6837"
+            },
+            {
+              "path": "GarrysMod/garrysmod/addons/garrys_redemption/lua/gr/possess.lua",
+              "sha256": "b1162cba09fb4e512c012e5c6d2da0e01ef8c7a9a8a6c7f80154d4d6f2c9e964"
+            },
+            {
+              "path": "GarrysMod/garrysmod/addons/garrys_redemption/lua/gr/probe.lua",
+              "sha256": "bdec211a7a5582a1129e357ff8f92cd7761e7c48976ac46f4f52e1ad78d2a6d7"
+            },
+            {
+              "path": "GarrysMod/garrysmod/addons/garrys_redemption/lua/gr/proxies.lua",
+              "sha256": "85b9c4cdd1945ac8a98f7e566db874de55b6c67c2a36fdee35b7c7896ac24fac"
+            },
+            {
+              "path": "GarrysMod/garrysmod/addons/garrys_redemption/lua/gr/quickinfo.lua",
+              "sha256": "d05f178eda963eb856e850767f029e69d9c832e3fe3dde75f2a2dadb9e3746c8"
+            },
+            {
+              "path": "GarrysMod/garrysmod/addons/garrys_redemption/lua/gr/sounds.lua",
+              "sha256": "497a6b5c46d6aeb7bd46475c2869662618d7662cd5281979910c21e9f2527ef1"
+            },
+            {
+              "path": "GarrysMod/garrysmod/addons/garrys_redemption/lua/gr/spawn.lua",
+              "sha256": "e03eeee682b90e51e81da629c9c7fe256c1b62b70f4b62645845e4244cd19bd5"
+            },
+            {
+              "path": "GarrysMod/garrysmod/addons/garrys_redemption/lua/gr/surfaces.lua",
+              "sha256": "9eb1a95870aba1473bab7d9a2f8c7799f1d858f82c207ee8bd63a23ec988e792"
+            },
+            {
+              "path": "GarrysMod/garrysmod/addons/garrys_redemption/lua/gr/sweps.lua",
+              "sha256": "7be78d49566f0a87e1420c426772a93541218651875017154208a56598a8a542"
+            },
+            {
+              "path": "GarrysMod/garrysmod/addons/garrys_redemption/lua/gr/terrain.lua",
+              "sha256": "d35bbdf69e6cd03d88ae3565b0fb6ce3e4e1446b78db56cdab029302c59c663d"
+            },
+            {
+              "path": "GarrysMod/garrysmod/addons/garrys_redemption/lua/gr/thirdperson.lua",
+              "sha256": "d8ceca6e600fd413b54487065e057bf49886bc1399a24a9107675a08d2905267"
+            },
+            {
+              "path": "GarrysMod/garrysmod/addons/garrys_redemption/lua/gr/tools.lua",
+              "sha256": "2c8b329f5bbf159a3afe51e187ff9a7ed14a784b58d3320a0d1661a6825394f3"
+            },
+            {
+              "path": "GarrysMod/garrysmod/addons/garrys_redemption/lua/gr/weapons.lua",
+              "sha256": "056e5aa738a7e2330dc892e36b6891bf179c9a85eca9b129f00ec2e81917f351"
+            },
+            {
+              "path": "GarrysMod/garrysmod/addons/garrys_redemption/lua/gr/world_render.lua",
+              "sha256": "ec8c2b4a64c07abe287545ca256e86e98cc12662395fa2cf68cb184ff8c00a4b"
+            },
+            {
+              "path": "GarrysMod/garrysmod/addons/garrys_redemption/lua/weapons/gmod_tool/stools/gr_possess.lua",
+              "sha256": "50ef5b6cba64bb3841fe4d3fa62a15aa91eedacfccc91842d393c30d8d00b50d"
+            },
+            {
+              "path": "GarrysMod/garrysmod/lua/bin/gmcl_gr_win64.dll",
+              "sha256": "4c212b6920bcc3a8f24a3a129661a671fff34e8788a4c5018388b8cae8900285"
+            },
+            {
+              "path": "GarrysMod/garrysmod/lua/bin/gmsv_gr_win64.dll",
+              "sha256": "4c212b6920bcc3a8f24a3a129661a671fff34e8788a4c5018388b8cae8900285"
+            },
+            {
+              "path": "RDR2/GarrysRedemption.asi",
+              "sha256": "2d1dac6222a1a77719b9662de363ddb60c8d78c3aa46a989a7fae18d73cced93"
+            },
+            {
+              "path": "GarrysRedemptionPassthrough.exe",
+              "sha256": "2404f0d9ac700197c5d261201d922ee126eaff820bc1193ed9e18d6d439df646"
+            },
+            {
+              "path": "LICENSE",
+              "sha256": "24fa771679b7d9a83bf45ad4338376a1b5bb1d2dba94abc3f930c30e5e8a9911"
+            },
+            {
+              "path": "README.md",
+              "sha256": "e220b7dc85abd45ddc5274662938aed7eef1f9df7897805a638f256ccbc5c9b6"
+            }
+          ],
+          "url": "https://github.com/SIGFAI/garrys-redemption/releases/download/v0.1.0/GarrysRedemption-v0.1.0-beta.zip",
+          "sha256": "91ba4e0c48558330a7130d38469406f40b0a458e1d0fcc87fc06185ba831a3a2",
+          "size": 567342
+        }
+      ]
+    },
+    {
+      "game": "gmod",
+      "strategy": "game-dir-snapshot",
+      "files": [
+        {
+          "src": "GarrysRedemption-v0.1.0-beta.zip",
+          "dst": "{game}",
+          "root": "GarrysMod",
+          "unpack": true,
+          "contents": [
+            {
+              "path": "GarrysMod/play_gmod.bat",
+              "sha256": "9fca67bcce82ec6c6761888e8865887f4add628ff84a1b866af7b3c77ce3b246"
+            },
+            {
+              "path": "GarrysMod/garrysmod/addons/garrys_redemption/lua/autorun/gr_init.lua",
+              "sha256": "118def7fbdf7a5b11709046c239cc05d58f2bf1cc980224e0f21650a82dc67f9"
+            },
+            {
+              "path": "GarrysMod/garrysmod/addons/garrys_redemption/lua/entities/gr_blocker.lua",
+              "sha256": "a713bc5313ee51d58d9531b60d597608d2d5a4ff96960ea64f40e174c01f41cd"
+            },
+            {
+              "path": "GarrysMod/garrysmod/addons/garrys_redemption/lua/entities/gr_chunk.lua",
+              "sha256": "7963a0648b266e64dcec77fd71d9abf158419a4716389c41015534516c0caf40"
+            },
+            {
+              "path": "GarrysMod/garrysmod/addons/garrys_redemption/lua/entities/gr_proxy.lua",
+              "sha256": "41ac9c9c4b6c275a37c58cbf7b2dd708f6bbeaec6d4cb5f857176635b96d73d9"
+            },
+            {
+              "path": "GarrysMod/garrysmod/addons/garrys_redemption/lua/entities/gr_surface.lua",
+              "sha256": "c8324b0dbded50b0a0092a3f5604f9cbfe4f8965bba9e63d9d1b3514dcc0cb77"
+            },
+            {
+              "path": "GarrysMod/garrysmod/addons/garrys_redemption/lua/gr/body.lua",
+              "sha256": "1c9f375ba0ac8659e3910b8b1c4ccc771f739c1419ef98e16ef80a8254dc24f5"
+            },
+            {
+              "path": "GarrysMod/garrysmod/addons/garrys_redemption/lua/gr/bridge.lua",
+              "sha256": "12230b8e62f544d4dd124b0e7ffbf78fd4ee4d6957d5292bb14c447978d3d5bd"
+            },
+            {
+              "path": "GarrysMod/garrysmod/addons/garrys_redemption/lua/gr/collide.lua",
+              "sha256": "fd5cf12d79c3f79a2b4a9eb969ac0dfea5fdbaa3d94814c2effa98f9ed6c4384"
+            },
+            {
+              "path": "GarrysMod/garrysmod/addons/garrys_redemption/lua/gr/commands.lua",
+              "sha256": "87b62abe6aa609793ed7c06b253e5ff84d5b04fc34906a5ba30990cfe8fbdb5c"
+            },
+            {
+              "path": "GarrysMod/garrysmod/addons/garrys_redemption/lua/gr/fly.lua",
+              "sha256": "b01dea768523177946545077333b1f98113eff5a2dc9a7d9a7f8208a88526222"
+            },
+            {
+              "path": "GarrysMod/garrysmod/addons/garrys_redemption/lua/gr/health.lua",
+              "sha256": "63e13f6404f2af2e32a4caff6c01d3b01fa4517a7b865fd64a6ec5b32ea218c5"
+            },
+            {
+              "path": "GarrysMod/garrysmod/addons/garrys_redemption/lua/gr/input.lua",
+              "sha256": "37424412852aa889a9457021e15ef7adc619825172dd266f13b4e55db8636ef2"
+            },
+            {
+              "path": "GarrysMod/garrysmod/addons/garrys_redemption/lua/gr/models_data.lua",
+              "sha256": "faa28009995b6a8d059df8b25f7759957dc3e58e9c69822150777af9e7878f29"
+            },
+            {
+              "path": "GarrysMod/garrysmod/addons/garrys_redemption/lua/gr/near.lua",
+              "sha256": "9d08c990835da7d0eb4a5f6f167e2b34b020cd8bb3210c711b44558c2cbb19b1"
+            },
+            {
+              "path": "GarrysMod/garrysmod/addons/garrys_redemption/lua/gr/overlay.lua",
+              "sha256": "2d025277f1bee23a6a3b4068969fdbdb3beac2e11f7fcd461086cc2d4c6c528b"
+            },
+            {
+              "path": "GarrysMod/garrysmod/addons/garrys_redemption/lua/gr/player.lua",
+              "sha256": "cd89e490d1754d275e95bef84fc324b69a6fe49fd14f47cec51a1a3bdd4c6837"
+            },
+            {
+              "path": "GarrysMod/garrysmod/addons/garrys_redemption/lua/gr/possess.lua",
+              "sha256": "b1162cba09fb4e512c012e5c6d2da0e01ef8c7a9a8a6c7f80154d4d6f2c9e964"
+            },
+            {
+              "path": "GarrysMod/garrysmod/addons/garrys_redemption/lua/gr/probe.lua",
+              "sha256": "bdec211a7a5582a1129e357ff8f92cd7761e7c48976ac46f4f52e1ad78d2a6d7"
+            },
+            {
+              "path": "GarrysMod/garrysmod/addons/garrys_redemption/lua/gr/proxies.lua",
+              "sha256": "85b9c4cdd1945ac8a98f7e566db874de55b6c67c2a36fdee35b7c7896ac24fac"
+            },
+            {
+              "path": "GarrysMod/garrysmod/addons/garrys_redemption/lua/gr/quickinfo.lua",
+              "sha256": "d05f178eda963eb856e850767f029e69d9c832e3fe3dde75f2a2dadb9e3746c8"
+            },
+            {
+              "path": "GarrysMod/garrysmod/addons/garrys_redemption/lua/gr/sounds.lua",
+              "sha256": "497a6b5c46d6aeb7bd46475c2869662618d7662cd5281979910c21e9f2527ef1"
+            },
+            {
+              "path": "GarrysMod/garrysmod/addons/garrys_redemption/lua/gr/spawn.lua",
+              "sha256": "e03eeee682b90e51e81da629c9c7fe256c1b62b70f4b62645845e4244cd19bd5"
+            },
+            {
+              "path": "GarrysMod/garrysmod/addons/garrys_redemption/lua/gr/surfaces.lua",
+              "sha256": "9eb1a95870aba1473bab7d9a2f8c7799f1d858f82c207ee8bd63a23ec988e792"
+            },
+            {
+              "path": "GarrysMod/garrysmod/addons/garrys_redemption/lua/gr/sweps.lua",
+              "sha256": "7be78d49566f0a87e1420c426772a93541218651875017154208a56598a8a542"
+            },
+            {
+              "path": "GarrysMod/garrysmod/addons/garrys_redemption/lua/gr/terrain.lua",
+              "sha256": "d35bbdf69e6cd03d88ae3565b0fb6ce3e4e1446b78db56cdab029302c59c663d"
+            },
+            {
+              "path": "GarrysMod/garrysmod/addons/garrys_redemption/lua/gr/thirdperson.lua",
+              "sha256": "d8ceca6e600fd413b54487065e057bf49886bc1399a24a9107675a08d2905267"
+            },
+            {
+              "path": "GarrysMod/garrysmod/addons/garrys_redemption/lua/gr/tools.lua",
+              "sha256": "2c8b329f5bbf159a3afe51e187ff9a7ed14a784b58d3320a0d1661a6825394f3"
+            },
+            {
+              "path": "GarrysMod/garrysmod/addons/garrys_redemption/lua/gr/weapons.lua",
+              "sha256": "056e5aa738a7e2330dc892e36b6891bf179c9a85eca9b129f00ec2e81917f351"
+            },
+            {
+              "path": "GarrysMod/garrysmod/addons/garrys_redemption/lua/gr/world_render.lua",
+              "sha256": "ec8c2b4a64c07abe287545ca256e86e98cc12662395fa2cf68cb184ff8c00a4b"
+            },
+            {
+              "path": "GarrysMod/garrysmod/addons/garrys_redemption/lua/weapons/gmod_tool/stools/gr_possess.lua",
+              "sha256": "50ef5b6cba64bb3841fe4d3fa62a15aa91eedacfccc91842d393c30d8d00b50d"
+            },
+            {
+              "path": "GarrysMod/garrysmod/lua/bin/gmcl_gr_win64.dll",
+              "sha256": "4c212b6920bcc3a8f24a3a129661a671fff34e8788a4c5018388b8cae8900285"
+            },
+            {
+              "path": "GarrysMod/garrysmod/lua/bin/gmsv_gr_win64.dll",
+              "sha256": "4c212b6920bcc3a8f24a3a129661a671fff34e8788a4c5018388b8cae8900285"
+            },
+            {
+              "path": "RDR2/GarrysRedemption.asi",
+              "sha256": "2d1dac6222a1a77719b9662de363ddb60c8d78c3aa46a989a7fae18d73cced93"
+            },
+            {
+              "path": "GarrysRedemptionPassthrough.exe",
+              "sha256": "2404f0d9ac700197c5d261201d922ee126eaff820bc1193ed9e18d6d439df646"
+            },
+            {
+              "path": "LICENSE",
+              "sha256": "24fa771679b7d9a83bf45ad4338376a1b5bb1d2dba94abc3f930c30e5e8a9911"
+            },
+            {
+              "path": "README.md",
+              "sha256": "e220b7dc85abd45ddc5274662938aed7eef1f9df7897805a638f256ccbc5c9b6"
+            }
+          ],
+          "url": "https://github.com/SIGFAI/garrys-redemption/releases/download/v0.1.0/GarrysRedemption-v0.1.0-beta.zip",
+          "sha256": "91ba4e0c48558330a7130d38469406f40b0a458e1d0fcc87fc06185ba831a3a2",
+          "size": 567342
+        }
+      ]
+    }
+  ],
+  "launch": [
+    {
+      "game": "rdr2",
+      "args": []
+    },
+    {
+      "game": "gmod",
+      "exe": "gmod_win64.exe",
+      "args": [
+        "-windowed",
+        "-novid",
+        "-condebug",
+        "+maxplayers",
+        "1",
+        "+map",
+        "gm_flatgrass"
+      ]
+    }
+  ],
+  "files": [
+    {
+      "name": "GarrysRedemption-v0.1.0-beta.zip",
+      "url": "https://github.com/SIGFAI/garrys-redemption/releases/download/v0.1.0/GarrysRedemption-v0.1.0-beta.zip",
+      "sha256": "91ba4e0c48558330a7130d38469406f40b0a458e1d0fcc87fc06185ba831a3a2",
+      "size": 567342
+    }
+  ],
+  "source": {
+    "repo": "https://github.com/codeByAlexff/garrys-redemption",
+    "license": "MIT",
+    "upstream_license": "MIT",
+    "tag": "v0.1.0-beta",
+    "commit": "4ada8a12a85d6f30e2c6485970792cc1b837c6ac",
+    "hosted": "https://github.com/SIGFAI/garrys-redemption"
+  },
+  "media": {},
+  "built_by": {
+    "author": "codeByAlexff",
+    "authors": [
+      "codeByAlexff"
+    ],
+    "packaged_by": "SIGF"
+  },
+  "idea_by": "codeByAlexff",
+  "built_at": "2026-10-05T00:00:00.000Z",
+  "status": "beta",
+  "issues": "https://github.com/codeByAlexff/garrys-redemption/issues",
+  "notes": [
+    "You need both games on PC: Red Dead Redemption 2 (Steam, Rockstar or Epic) and Garry's Mod (Steam). Windows 64-bit.",
+    "Install Script Hook RDR2 yourself (http://www.dev-c.com/rdr2/scripthookrdr2/): copy ScriptHookRDR2.dll and dinput8.dll next to RDR2.exe. It may not be redistributed, so the app does not ship it.",
+    "Switch Garry's Mod to the x86-64 branch (Steam, Properties, Betas) so gmod_win64.exe exists.",
+    "Set RDR2 to windowed borderless (or windowed). On NVIDIA with RDR2 filling the monitor: NVIDIA Control Panel > Manage 3D settings > Red Dead Redemption 2 > Vulkan/OpenGL present method: Prefer layered on DXGI Swapchain (or run RDR2 on DirectX 12).",
+    "Press Play: RDR2 starts first; load story mode and wait for \"Garry's Redemption: waiting for GMod\". Then Garry's Mod starts (gmod_win64.exe, windowed, gm_flatgrass, 1 player); if it does not, run play_gmod.bat in the Garry's Mod folder. GMod's window hides itself once linked. F9 hands the player to RDR2 and back.",
+    "Story mode only: the plugin switches itself off in any online session, and Script Hook RDR2 closes the game if you go online.",
+    "The app writes GarrysRedemption.asi into the RDR2 folder and the module, addon and play_gmod.bat into the Garry's Mod folder; Restore removes them. The author's own launcher (GarrysRedemptionPassthrough.exe) is not installed.",
+    "Beta, played on one PC (Windows 11, NVIDIA, Vulkan): look stutter, no exclusive fullscreen, untested on AMD and DX12. Report bugs to the author on the upstream issue tracker."
+  ]
+}
