@@ -4,11 +4,11 @@
   "name": "Garry's Redemption",
   "tagline": "Play Red Dead Redemption 2 as a Garry's Mod player: physgun, toolgun, Q menu and GMod's guns on RDR2's people, horses and wagons, in story mode.",
   "how_to_play": [
-    "Play Red Dead Redemption 2's story mode as a Garry's Mod player, with the physgun, toolgun, Q menu and GMod's guns.",
-    "Press Play and load story mode; Garry's Mod starts by itself, and \"connected to GMod, which has the player\" means it works.",
-    "Use your own GMod binds to move, noclip, open the Q and C menus, switch weapons and use the toolgun.",
-    "The Q menu's Red Dead tab spawns RDR2's people, animals and vehicles.",
-    "Press F9 to hand the player to RDR2 to ride, shop or do a mission, and again to come back; Esc/P pause, M map."
+    "Play RDR2's story mode as a Garry's Mod player: GMod's movement, HUD, guns, physgun, toolgun and Q menu on RDR2's people, horses and wagons.",
+    "Press Play: RDR2 starts first. Load story mode and wait for \"Garry's Redemption: waiting for GMod\" at the top left; Garry's Mod then starts hidden.",
+    "If it does not, run play_gmod.bat in the Garry's Mod game folder. \"connected to GMod, which has the player\" means it works.",
+    "Use your own GMod binds (move, noclip, Q and C menus, weapons, toolgun). The Q menu's Red Dead tab spawns RDR2's people, animals and vehicles.",
+    "RDR2 keeps Esc/P (pause), M (map) and F9, which hands the player to RDR2 (to ride, shop or do a mission) and back."
   ],
   "kind": "passthrough",
   "games": [
@@ -428,9 +428,6 @@
   "status": "beta",
   "issues": "https://github.com/codeByAlexff/garrys-redemption/issues",
   "notes": [
-    "How it works: you play Red Dead Redemption 2's story mode as a Garry's Mod player: GMod's movement, HUD, guns, physgun, toolgun and Q menu on RDR2's people, horses and wagons. Garry's Mod runs hidden next to RDR2.",
-    "To start: Play starts RDR2 first. Load story mode and wait for \"Garry's Redemption: waiting for GMod\" at the top left. Garry's Mod then starts; if it does not, run play_gmod.bat in the Garry's Mod folder. \"connected to GMod, which has the player\" means it works.",
-    "Controls: your own GMod binds (move, noclip, Q and C menus, weapons, toolgun). RDR2 keeps Esc/P (pause), M (map) and F9, which hands the player to RDR2 (to ride, shop or do a mission) and back. The Q menu's Red Dead tab spawns RDR2's people, animals and vehicles.",
     "You need RDR2 on PC (Steam, Rockstar or Epic; tested on 1.0.1491.50) and Garry's Mod switched to the x86-64 branch (Steam > Properties > Betas). Install Script Hook RDR2 yourself: copy ScriptHookRDR2.dll and dinput8.dll next to RDR2.exe.",
     "Set RDR2 to windowed borderless (exclusive fullscreen hides GMod's HUD). On NVIDIA at full monitor size: NVIDIA Control Panel > Manage 3D settings > RDR2 > Vulkan/OpenGL present method: Prefer layered on DXGI Swapchain (or use DirectX 12). As Arthur, avoid New Austin.",
     "Story mode only: the plugin turns itself off in any online session and Script Hook RDR2 closes the game online. Beta played on one PC (look stutter, untested on AMD/DX12): report bugs with the Report a bug link. Restore removes the mod files from both game folders."
