@@ -47,6 +47,15 @@
       "note": "Steam > Garry's Mod > Properties > Betas: pick x86-64 (the 64-bit gmod_win64.exe)"
     }
   ],
+  "requires_files": [
+    {
+      "id": "scripthookrdr2",
+      "game": "rdr2",
+      "path": "{game}/ScriptHookRDR2.dll",
+      "message": "Install Script Hook RDR2 for your game version first",
+      "page": "https://www.dev-c.com/rdr2/scripthookrdr2/"
+    }
+  ],
   "install": [
     {
       "game": "rdr2",
